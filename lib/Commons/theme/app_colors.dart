@@ -4,6 +4,8 @@ class AppColors {
   static const Color homeAppbarColor = Color(0xFFE7EAEF);
   static const Color homeExploreButtonColor = Color(0xFF000000);
   static const Color newArrivalColor = Color(0xFFFFFFFF);
+  static const Color buttonColor = Color(0xFFF9F9F9);
+  static const Color homeopenFashion = Color(0xFFF2F2F2);
   static const Color offWhiteColor = Color(0xFF979797);
   static const Color backgroundColor = Color(0xFFF8F0E7);
   static const Color inputbackgroundColor = Color(0xFFD9DBE9);

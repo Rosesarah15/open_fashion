@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
 import 'package:open_fashion/Commons/widgets/justforyou.dart';
 import 'package:open_fashion/Commons/widgets/new_arrival.dart';
+import 'package:open_fashion/Commons/widgets/openfash.dart';
 import 'package:open_fashion/Commons/widgets/welcome_image.dart';
 
 class MyHomeScreen extends StatelessWidget {
@@ -45,6 +46,7 @@ class MyHomeScreen extends StatelessWidget {
             WelcomeImage(),
             NewArrival(),
             JustForYou(),
+            OpenFashion(),
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
+import 'package:open_fashion/Screens/contact_us.dart';
 
 class OpenFashion extends StatelessWidget {
   const OpenFashion({super.key});
@@ -128,9 +129,9 @@ class OpenFashion extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildFooterText('About', Colors.black),
-                    _buildFooterText('Contact', Colors.black),
-                    _buildFooterText('Blog', Colors.black),
+                    _buildFooterTextButton('About', (context)),
+                    _buildFooterTextButton('Contact', (context)),
+                    _buildFooterTextButton('Blog', (context)),
                   ],
                 ),
                 const SizedBox(
@@ -215,5 +216,47 @@ Widget _buildFooterText(
         style: TextStyle(color: color, fontSize: 20),
       ),
     ],
+  );
+}
+
+// Widget _buildFooterTextButton(
+//   String text,
+//   VoidCallback onPressed,
+// ) {
+//   return TextButton(
+//     onPressed: onPressed,
+//     child: Text(
+//       text,
+//       style: const TextStyle(color: Colors.black, fontSize: 20),
+//     ),
+//   );
+// }
+Widget _buildFooterTextButton(
+  String text,
+  BuildContext context,
+) {
+  return TextButton(
+    onPressed: () {
+      switch (text) {
+        case 'About':
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const ContactPage()));
+          break;
+        case 'Contact':
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const ContactPage()));
+          break;
+        case 'Blog':
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const ContactPage()));
+          break;
+        default:
+          break;
+      }
+    },
+    child: Text(
+      text,
+      style: const TextStyle(color: Colors.black, fontSize: 20),
+    ),
   );
 }

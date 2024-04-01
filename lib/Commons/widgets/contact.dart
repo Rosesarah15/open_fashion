@@ -54,59 +54,60 @@ class ContactUs extends StatelessWidget {
                       Colors.black,
                       15),
                   const SizedBox(height: 50),
+                  buildFooter(context),
                   /////////////////////////////////////////
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Image.asset('assets/icons/Twitter .png'),
-                        Image.asset('assets/icons/Instagram (2).png'),
-                        Image.asset('assets/icons/YouTube .png'),
-                      ]),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Image.asset('assets/icons/home_divider.png'),
-                  const SizedBox(
-                    height: 25,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      _buildFooterText('Support@openui.design', Colors.black),
-                      _buildFooterText('+60 825 876', Colors.black),
-                      _buildFooterText(
-                          '08:00 - 22:00 - Everyday', Colors.black),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Image.asset('assets/icons/home_divider.png'),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      _buildFooterTextButton('About', (context)),
-                      _buildFooterTextButton('Contact', (context)),
-                      _buildFooterTextButton('Blog', (context)),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 35,
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 70,
-                    color: AppColors.homeopenFashion,
-                    child: const Center(
-                      child: Text(
-                        'Copyright OpenUI All Rights Reserved',
-                        style: TextStyle(color: Colors.grey, fontSize: 18),
-                      ),
-                    ),
-                  )
+                  // Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //     children: [
+                  //       Image.asset('assets/icons/Twitter .png'),
+                  //       Image.asset('assets/icons/Instagram (2).png'),
+                  //       Image.asset('assets/icons/YouTube .png'),
+                  //     ]),
+                  // const SizedBox(
+                  //   height: 30,
+                  // ),
+                  // Image.asset('assets/icons/home_divider.png'),
+                  // const SizedBox(
+                  //   height: 25,
+                  // ),
+                  // Column(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //   children: [
+                  //     _buildFooterText('Support@openui.design', Colors.black),
+                  //     _buildFooterText('+60 825 876', Colors.black),
+                  //     _buildFooterText(
+                  //         '08:00 - 22:00 - Everyday', Colors.black),
+                  //   ],
+                  // ),
+                  // const SizedBox(
+                  //   height: 30,
+                  // ),
+                  // Image.asset('assets/icons/home_divider.png'),
+                  // const SizedBox(
+                  //   height: 30,
+                  // ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  //   children: [
+                  //     _buildFooterTextButton('About', (context)),
+                  //     _buildFooterTextButton('Contact', (context)),
+                  //     _buildFooterTextButton('Blog', (context)),
+                  //   ],
+                  // ),
+                  // const SizedBox(
+                  //   height: 35,
+                  // ),
+                  // Container(
+                  //   width: MediaQuery.of(context).size.width,
+                  //   height: 70,
+                  //   color: AppColors.homeopenFashion,
+                  //   child: const Center(
+                  //     child: Text(
+                  //       'Copyright OpenUI All Rights Reserved',
+                  //       style: TextStyle(color: Colors.grey, fontSize: 18),
+                  //     ),
+                  //   ),
+                  // )
                 ],
               ),
             ),
@@ -191,6 +192,62 @@ Widget _buildFooterTextButton(
     child: Text(
       text,
       style: const TextStyle(color: Colors.black, fontSize: 20),
+    ),
+  );
+}
+
+/////
+Widget buildFooter(BuildContext context) {
+  return Container(
+    width: MediaQuery.of(context).size.width,
+    color: AppColors.newArrivalColor,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const SizedBox(height: 40),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset('assets/icons/Twitter .png'),
+            Image.asset('assets/icons/Instagram (2).png'),
+            Image.asset('assets/icons/YouTube .png'),
+          ],
+        ),
+        const SizedBox(height: 30),
+        Image.asset('assets/icons/home_divider.png'),
+        const SizedBox(height: 25),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _buildFooterText('Support@openui.design', Colors.black),
+            _buildFooterText('+60 825 876', Colors.black),
+            _buildFooterText('08:00 - 22:00 - Everyday', Colors.black),
+          ],
+        ),
+        const SizedBox(height: 30),
+        Image.asset('assets/icons/home_divider.png'),
+        const SizedBox(height: 30),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _buildFooterTextButton('About', context),
+            _buildFooterTextButton('Contact', context),
+            _buildFooterTextButton('Blog', context),
+          ],
+        ),
+        const SizedBox(height: 35),
+        Container(
+          width: MediaQuery.of(context).size.width,
+          height: 70,
+          color: AppColors.homeopenFashion,
+          child: const Center(
+            child: Text(
+              'Copyright OpenUI All Rights Reserved',
+              style: TextStyle(color: Colors.grey, fontSize: 18),
+            ),
+          ),
+        ),
+      ],
     ),
   );
 }

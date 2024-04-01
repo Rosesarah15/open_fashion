@@ -13,7 +13,7 @@ class AppColors {
   static const Color placeholderColor = Color(0xFF888888);
   static const Color labelColor = Color(0xFF555555);
   static const Color bodyColor = Color(0xFF333333);
-  static const Color titleActiveColor = Color(0xFF000000);
+  static const Color collectionColor = Color(0xFF343434);
   static const Color secondaryColor = Color(0xFFDD8560);
   static const Color primaryColor = Color(0xFFA8715A);
 }

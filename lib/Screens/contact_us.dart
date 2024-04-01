@@ -8,17 +8,27 @@ class ContactPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(
+          appbarColor: AppColors.homeAppbarColor,
+          imageColor: Colors.black,
+          iconColor: Colors.grey),
       body: const ContactUs(),
     );
   }
 }
 
-AppBar buildAppBar() {
+AppBar buildAppBar(
+    {required Color appbarColor,
+    required Color imageColor,
+    required Color iconColor}) {
   return AppBar(
-    backgroundColor: AppColors.homeAppbarColor,
+    backgroundColor: appbarColor,
     leading: IconButton(
-      icon: const ImageIcon(AssetImage('assets/icons/home_Menu.png')),
+      icon: const ImageIcon(
+        AssetImage('assets/icons/home_Menu.png'),
+        size: 25,
+      ),
+      color: imageColor,
       onPressed: () {},
     ),
     title: Row(
@@ -26,18 +36,27 @@ AppBar buildAppBar() {
       children: [
         Image.asset(
           'assets/logos/openhouse.png',
-          // height: 10,
-          // width: 30,
+          color: imageColor,
         ),
       ],
     ),
     actions: [
       IconButton(
-        icon: const ImageIcon(AssetImage('assets/icons/home_Search.png')),
+        icon: const ImageIcon(
+          AssetImage('assets/icons/home_Search.png'),
+          size: 25,
+        ),
+        color: iconColor,
         onPressed: () {},
       ),
       IconButton(
-        icon: const ImageIcon(AssetImage('assets/icons/home_shopping bag.png')),
+        icon: const ImageIcon(
+          AssetImage(
+            'assets/icons/home_shopping bag.png',
+          ),
+          size: 25,
+        ),
+        color: iconColor,
         onPressed: () {},
       ),
     ],

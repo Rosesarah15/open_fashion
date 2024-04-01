@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
+import 'package:open_fashion/Screens/collection_screen.dart';
 
 class WelcomeImage extends StatelessWidget {
   const WelcomeImage({super.key});
@@ -36,7 +37,13 @@ class WelcomeImage extends StatelessWidget {
               height: 50,
               width: 340,
               child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CollectionPage(),
+                        ));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.homeExploreButtonColor),
                   child: const Text(

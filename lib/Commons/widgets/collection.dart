@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
 import 'package:open_fashion/Commons/widgets/contact.dart';
+import 'package:open_fashion/Screens/collection_detail_screen.dart';
 
 class Collection extends StatelessWidget {
   const Collection({super.key});
@@ -14,8 +15,17 @@ class Collection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(height: 50),
-          Image.asset(
-            'assets/images/octobercollection.png',
+          GestureDetector(
+            child: Image.asset(
+              'assets/images/octobercollection.png',
+            ),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CollectionDetailPage(),
+                  ));
+            },
           ),
           const SizedBox(height: 30),
           Image.asset('assets/images/octobercollection2.png'),

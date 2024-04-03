@@ -18,9 +18,9 @@ class Cart extends StatelessWidget {
           cartText('CART', Colors.black, 20),
           const SizedBox(height: 30),
           _buildCartImageText(Image.asset('assets/images/knit.png'), 'LAMEREI',
-              'Recycle Boucle knit Cardigan', 120),
+              'Recycle Boucle knit Cardigan', '120'),
           _buildCartImageText(Image.asset('assets/images/sweatshirt.png'),
-              '5252  BY O!O|', '2021 Signature Sweatshirt [NAVY]', 120),
+              '5252  BY O!O|', '2021 Signature Sweatshirt [NAVY]', '120'),
           const SizedBox(height: 60),
           Container(
             width: 350,
@@ -49,6 +49,7 @@ class Cart extends StatelessWidget {
               'BUY NOW',
               18,
               context),
+          const SizedBox(height: 20)
         ],
       ),
     );
@@ -64,7 +65,7 @@ Text cartText(String text, Color color, double fontsize) {
 }
 
 Widget _buildCartImageText(
-    Image image, String label, String description, double price) {
+    Image image, String label, String description, String price) {
   return Row(
     children: [
       Padding(
@@ -81,7 +82,7 @@ Widget _buildCartImageText(
                 color: Colors.black,
                 decoration: TextDecoration.none),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
           Text(
             description,
             style: const TextStyle(
@@ -89,7 +90,7 @@ Widget _buildCartImageText(
                 color: Colors.black,
                 decoration: TextDecoration.none),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -106,7 +107,7 @@ Widget _buildCartImageText(
               _buildCircularContainerWithText(const Icon(Icons.add)),
             ],
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 15),
           Text(
             '\$$price',
             style:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
+import 'package:open_fashion/Screens/about_screen.dart';
 import 'package:open_fashion/Screens/contact_us.dart';
 
 class OpenFashion extends StatelessWidget {
@@ -240,7 +241,7 @@ Widget _buildFooterTextButton(
       switch (text) {
         case 'About':
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const ContactPage()));
+              MaterialPageRoute(builder: (context) => const AboutPage()));
           break;
         case 'Contact':
           Navigator.push(context,

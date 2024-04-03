@@ -11,7 +11,6 @@ class MyMenu extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       color: AppColors.newArrivalColor,
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const SizedBox(height: 80),
           Row(
@@ -41,7 +40,8 @@ class MyMenu extends StatelessWidget {
               itemBuilder: (context, index) {
                 final menuItem = _menuItems[index];
                 return _MenuItemWithText(
-                    text: menuItem['text'], items: menuItem['items']);
+                    text: menuItem['text'], items: menuItem['items']
+                    );
               },
             ),
           )
@@ -69,6 +69,7 @@ class _MenuItemWithText extends StatefulWidget {
 }
 
 class _MenuItemWithTextState extends State<_MenuItemWithText> {
+  // ignore: unused_field
   late bool _isDropdownExpanded;
   String? _selectedItem;
 

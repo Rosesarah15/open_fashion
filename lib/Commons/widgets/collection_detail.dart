@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
 import 'package:open_fashion/Commons/widgets/contact.dart';
+import 'package:open_fashion/Screens/product_detailpage2.dart';
 
 class CollectionDetail extends StatelessWidget {
   const CollectionDetail({super.key});
@@ -25,11 +26,11 @@ class CollectionDetail extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildImageText(
+              _buildImageTextHeart(
                   Image.asset('assets/images/collectiondetaildress.png'),
                   'October\n reversible angora cardigan',
                   '100'),
-              _buildImageText(
+              _buildImageTextHeart(
                   Image.asset('assets/images/collectiondetailboot.png'),
                   'October\n reversible angora cardigan',
                   '100'),
@@ -39,11 +40,11 @@ class CollectionDetail extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildImageText(
+              _buildImageTextHeart(
                   Image.asset('assets/images/collectiondetailpins.png'),
                   'October\n reversible angora cardigan',
                   '100'),
-              _buildImageText(
+              _buildImageTextHeart(
                   Image.asset('assets/images/collectiondetailrings.png'),
                   'October\n reversible angora cardigan',
                   '100'),
@@ -53,11 +54,20 @@ class CollectionDetail extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildImageText(
-                  Image.asset('assets/images/collectiondetailring.png'),
-                  'October\n reversible angora cardigan',
-                  '100'),
-              _buildImageText(
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ProductDetailPage2(),
+                      ));
+                },
+                child: _buildImageTextHeart(
+                    Image.asset('assets/images/collectiondetailring.png'),
+                    'October\n reversible angora cardigan',
+                    '100'),
+              ),
+              _buildImageTextHeart(
                   Image.asset('assets/images/collectiondetailrinng.png'),
                   'October\n reversible angora cardigan',
                   '100'),
@@ -79,10 +89,13 @@ class CollectionDetail extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                const SizedBox(width: 25),
                 _buildImageScrollText('BLACK COLLECTION',
                     Image.asset('assets/images/octobercollection2.png')),
+                const SizedBox(width: 13),
                 _buildImageScrollText('HAE BY HAEKIN',
                     Image.asset('assets/images/octobercollection3.png')),
+                const SizedBox(width: 13),
                 _buildImageScrollText(
                     'LOU', Image.asset('assets/images/octoberlady.png')),
               ],
@@ -96,7 +109,7 @@ class CollectionDetail extends StatelessWidget {
   }
 }
 
-Widget _buildImageText(Image image, String text, String number) {
+Widget _buildImageTextHeart(Image image, String text, String number) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
@@ -104,8 +117,8 @@ Widget _buildImageText(Image image, String text, String number) {
         children: [
           image,
           Positioned(
-            top: 10,
-            left: 10,
+            bottom: 10,
+            right: 10,
             child: Image.asset('assets/icons/Heart.png'),
           ),
         ],

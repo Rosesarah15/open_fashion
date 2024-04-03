@@ -4,6 +4,7 @@ import 'package:open_fashion/Commons/widgets/justforyou.dart';
 import 'package:open_fashion/Commons/widgets/new_arrival.dart';
 import 'package:open_fashion/Commons/widgets/openfash.dart';
 import 'package:open_fashion/Commons/widgets/welcome_image.dart';
+import 'package:open_fashion/Screens/cart_empty_screen.dart';
 import 'package:open_fashion/Screens/menu_screen.dart';
 
 class MyHomeScreen extends StatelessWidget {
@@ -58,7 +59,13 @@ class MyHomeScreen extends StatelessWidget {
         IconButton(
           icon:
               const ImageIcon(AssetImage('assets/icons/home_shopping bag.png')),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CartEmptyPage(),
+                ));
+          },
         ),
       ],
     );

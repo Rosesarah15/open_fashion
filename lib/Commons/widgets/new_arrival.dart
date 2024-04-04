@@ -55,13 +55,13 @@ class NewArrival extends StatelessWidget {
           ),
           TextButton.icon(
             onPressed: () {},
-            icon: const Icon(
-              Icons.arrow_forward_outlined,
-              color: Colors.black,
-            ),
             label: const Text(
               'Explore More',
               style: TextStyle(color: Colors.black, fontSize: 20),
+            ),
+            icon: const Icon(
+              Icons.arrow_forward_outlined,
+              color: Colors.black,
             ),
           ),
           const SizedBox(

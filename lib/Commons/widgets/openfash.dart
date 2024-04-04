@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
 import 'package:open_fashion/Screens/about_screen.dart';
+import 'package:open_fashion/Screens/blog_gridview_screen.dart';
 import 'package:open_fashion/Screens/contact_us.dart';
 
 class OpenFashion extends StatelessWidget {
@@ -248,8 +249,10 @@ Widget _buildFooterTextButton(
               MaterialPageRoute(builder: (context) => const ContactPage()));
           break;
         case 'Blog':
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const ContactPage()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const BlogGridviewPage()));
           break;
         default:
           break;

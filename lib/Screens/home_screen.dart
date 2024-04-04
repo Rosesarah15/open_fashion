@@ -6,6 +6,7 @@ import 'package:open_fashion/Commons/widgets/openfash.dart';
 import 'package:open_fashion/Commons/widgets/welcome_image.dart';
 import 'package:open_fashion/Screens/cart_empty_screen.dart';
 import 'package:open_fashion/Screens/menu_screen.dart';
+import 'package:open_fashion/Screens/search_recent_screen.dart';
 
 class MyHomeScreen extends StatelessWidget {
   const MyHomeScreen({super.key});
@@ -54,7 +55,12 @@ class MyHomeScreen extends StatelessWidget {
       actions: [
         IconButton(
           icon: const ImageIcon(AssetImage('assets/icons/home_Search.png')),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const SearchRecentPage()));
+          },
         ),
         IconButton(
           icon:

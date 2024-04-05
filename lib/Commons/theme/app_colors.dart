@@ -19,4 +19,6 @@ class AppColors {
   static const Color containerColor = Color(0xFF333333);
   static const Color buttonblogColor = Color(0xFFF5F5F5);
   static const Color buttonSearchColor = Color(0xFFC4C4C4);
+  static const Color buttonCColor = Color(0xFFDEDEDE);
+  
 }

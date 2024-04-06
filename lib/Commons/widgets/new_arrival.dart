@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
+import 'package:open_fashion/Screens/blog_listview_screen.dart';
 import 'package:open_fashion/Screens/category_grid_viewscreen.dart';
+import 'package:open_fashion/Screens/category_gridviewcoats.dart';
 
 class NewArrival extends StatelessWidget {
   const NewArrival({super.key});
@@ -23,7 +25,15 @@ class NewArrival extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildNewArrivalText('All'),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const CategoryGridCoatsPage()));
+                  },
+                  child: _buildNewArrivalText('All')),
               GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -33,7 +43,14 @@ class NewArrival extends StatelessWidget {
                                 const CategoryGridViewPage()));
                   },
                   child: _buildNewArrivalText('Apparel')),
-              _buildNewArrivalText('Dress'),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BlogListViewPage()));
+                  },
+                  child: _buildNewArrivalText('Dress')),
               _buildNewArrivalText('Tshirt'),
               _buildNewArrivalText('Bag'),
             ],

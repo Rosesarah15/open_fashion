@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
 import 'package:open_fashion/Commons/widgets/contact.dart';
+import 'package:open_fashion/Screens/product_detail_screen.dart';
 
 class CategoryGridView extends StatelessWidget {
   const CategoryGridView({super.key});
@@ -27,13 +28,21 @@ class CategoryGridView extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 12),
-            _buildApparelImage(
-                Image.asset(
-                  'assets/images/womancoat.png',
-                ),
-                'MOHAN',
-                'Recycle Boucle Knit Cardigan Pink',
-                '120'),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProductDetailPage()));
+              },
+              child: _buildApparelImage(
+                  Image.asset(
+                    'assets/images/womancoat.png',
+                  ),
+                  'MOHAN',
+                  'Recycle Boucle Knit Cardigan Pink',
+                  '120'),
+            ),
             const SizedBox(height: 22),
             _buildApparelImage(Image.asset('assets/images/brownsweater.png'),
                 'MOHAN', 'Recycle Bouncle Knit Cardigan Pink', '120'),

@@ -229,7 +229,8 @@ Widget _buildImageText(
 
 Widget _buildImageTextHeart(Image image, String text, String number) {
   return Column(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Stack(
         children: [

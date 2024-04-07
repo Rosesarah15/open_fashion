@@ -3,6 +3,7 @@ import 'package:open_fashion/Commons/theme/app_colors.dart';
 import 'package:open_fashion/Screens/blog_listview_screen.dart';
 import 'package:open_fashion/Screens/category_grid_viewscreen.dart';
 import 'package:open_fashion/Screens/category_gridviewcoats.dart';
+import 'package:open_fashion/Screens/category_listview_screen.dart';
 
 class NewArrival extends StatelessWidget {
   const NewArrival({super.key});
@@ -61,35 +62,56 @@ class NewArrival extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildNewArrivalItem(
-                  'assets/images/home_first_image.png', 'Item1'),
-              _buildNewArrivalItem(
-                  'assets/images/home_second_image.png', 'Item1'),
+              _buildNewArrivalItem('assets/images/home_first_image.png'),
+              _buildNewArrivalItem('assets/images/home_second_image.png'),
             ],
           ),
+          const SizedBox(height: 15),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildNewArrivalItem(
-                  'assets/images/home_third_image.png', 'Item3'),
-              _buildNewArrivalItem(
-                  'assets/images/home_fouth_image.png', 'Item 4'),
+              _buildNewArrivalItem('assets/images/home_third_image.png'),
+              _buildNewArrivalItem('assets/images/home_fouth_image.png'),
             ],
           ),
           const SizedBox(
             height: 25,
           ),
           TextButton.icon(
-            onPressed: () {},
-            label: const Text(
-              'Explore More',
-              style: TextStyle(color: Colors.black, fontSize: 20),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const CategoryListviewPage()));
+            },
+            label: const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Explore More',
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+                SizedBox(width: 6),
+                Icon(
+                  Icons.arrow_forward_outlined,
+                  color: Colors.black,
+                ),
+              ],
             ),
-            icon: const Icon(
-              Icons.arrow_forward_outlined,
-              color: Colors.black,
-            ),
+            icon: const SizedBox.shrink(),
           ),
+
+          // TextButton.icon(
+          //   onPressed: () {},
+          //   label: const Text(
+          //     'Explore More',
+          //     style: TextStyle(color: Colors.black, fontSize: 20),
+          //   ),
+          //   icon: const Icon(
+          //     Icons.arrow_forward_outlined,
+          //     color: Colors.black,
+          //   ),
+          // ),
           const SizedBox(
             height: 60,
           ),
@@ -171,8 +193,11 @@ Widget _buildNewArrivalText(
   );
 }
 
-Widget _buildNewArrivalItem(String imagePath, String text) {
+Widget _buildNewArrivalItem(
+  String imagePath,
+) {
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       Image.asset(
         imagePath,
@@ -181,13 +206,18 @@ Widget _buildNewArrivalItem(String imagePath, String text) {
         fit: BoxFit.cover,
       ),
       const SizedBox(height: 20),
-      Text(
-        text,
-        style: const TextStyle(
-          fontSize: 16,
+      const Text(
+        '2IWN reversible angora\n           cardigan',
+        style: TextStyle(
+          fontSize: 14,
           color: Colors.grey,
         ),
       ),
+      const SizedBox(height: 5),
+      const Text(
+        '\$120',
+        style: TextStyle(fontSize: 16, color: Colors.red),
+      )
     ],
   );
 }

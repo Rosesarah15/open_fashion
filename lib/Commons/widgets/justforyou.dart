@@ -15,16 +15,22 @@ class JustForYou extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              _buildImageJustForYou('Harris Tweed Three Button\n   Jacket',
-                  'assets/images/home_second_image.png', "120"),
-              _buildImageJustForYou('IWN reversible angora\n   Cardigan',
-                  'assets/images/home_fouth_image.png', '120'),
+              _buildImageJustForYou(
+                  'Harris Tweed Three Button\n                  Jacket',
+                  'assets/images/home_second_image.png',
+                  "120"),
+              _buildImageJustForYou(
+                  'IWN reversible angora\n            Cardigan',
+                  'assets/images/home_fouth_image.png',
+                  '120'),
               _buildImageJustForYou(
                   'Cashmere Blend Cropped\n  Jacket SWIWJ285-AM',
                   'assets/images/home_third_image.png',
                   '120'),
-              _buildImageJustForYou('Harris Tweed Three Button\n   Jacket',
-                  'assets/images/home_first_image.png', '120'),
+              _buildImageJustForYou(
+                  'Harris Tweed Three Button\n                  Jacket',
+                  'assets/images/home_first_image.png',
+                  '120'),
             ],
           ),
         ),
@@ -67,6 +73,7 @@ class JustForYou extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(5.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
             imagePath,

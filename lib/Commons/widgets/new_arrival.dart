@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:open_fashion/Commons/theme/app_colors.dart';
+
 import 'package:open_fashion/Screens/blog_listview_screen.dart';
 import 'package:open_fashion/Screens/category_grid_viewscreen.dart';
 import 'package:open_fashion/Screens/category_gridviewcoats.dart';
 import 'package:open_fashion/Screens/category_listview_screen.dart';
+import 'package:open_fashion/Screens/search_view_screen.dart';
 
 class NewArrival extends StatelessWidget {
   const NewArrival({super.key});
@@ -52,7 +54,14 @@ class NewArrival extends StatelessWidget {
                             builder: (context) => const BlogListViewPage()));
                   },
                   child: _buildNewArrivalText('Dress')),
-              _buildNewArrivalText('Tshirt'),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SearchViewPage()));
+                  },
+                  child: _buildNewArrivalText('Tshirt')),
               _buildNewArrivalText('Bag'),
             ],
           ),
